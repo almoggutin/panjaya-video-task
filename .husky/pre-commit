@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+branch_name=$(git symbolic-ref --short HEAD)
+
+echo "Running other pre-commit hooks..."
+npx lint-staged --concurrent false

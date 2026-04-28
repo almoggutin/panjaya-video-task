@@ -1,0 +1,29 @@
+.asset-title-row {
+	margin-bottom: 24px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid var(--line-soft);
+}
+
+.asset-title-row__group {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin-bottom: 8px;
+}
+
+.asset-title-row__title {
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	min-width: 0;
+}
+
+.asset-title-row__desc {
+	color: var(--fg-dim);
+	font-size: 14px;
+	line-height: 1.6;
+	margin: 0;
+	max-width: 760px;
+}

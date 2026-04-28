@@ -1,0 +1,6 @@
+@media (max-width: 639px) {
+	.asset-table th:nth-child(n + 3),
+	.asset-table td:nth-child(n + 3) {
+		display: none;
+	}
+}

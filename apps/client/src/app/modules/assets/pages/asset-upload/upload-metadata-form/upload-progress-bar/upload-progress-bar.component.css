@@ -1,0 +1,52 @@
+.upload-progress {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.upload-progress__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.upload-progress__filename {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--fg);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.upload-progress__pct {
+	font-size: 13px;
+	color: var(--fg-soft);
+	flex-shrink: 0;
+	margin-left: 8px;
+}
+
+.upload-progress__track {
+	height: 6px;
+	border-radius: 99px;
+	background: var(--panel-2);
+	overflow: hidden;
+}
+
+.upload-progress__fill {
+	height: 100%;
+	border-radius: 99px;
+	background: var(--accent);
+	transition: width 0.1s linear;
+}
+
+.upload-progress__footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.upload-progress__label {
+	font-size: 13px;
+	color: var(--fg-faint);
+}

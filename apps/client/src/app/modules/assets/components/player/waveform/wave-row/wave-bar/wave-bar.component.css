@@ -1,0 +1,7 @@
+.wave-bar {
+	flex: 1;
+	border-radius: 1px;
+	transition:
+		background 0.1s,
+		opacity 0.15s;
+}

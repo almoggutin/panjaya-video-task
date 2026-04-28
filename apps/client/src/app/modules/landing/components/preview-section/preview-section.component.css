@@ -1,0 +1,28 @@
+.preview-section {
+	border-bottom: 1px solid var(--line-soft);
+}
+
+.preview-section__inner {
+	padding-top: 72px;
+	padding-bottom: 88px;
+}
+
+.preview-section__header {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.preview-section__title {
+	font-size: 24px;
+	font-weight: 600;
+	letter-spacing: -0.015em;
+	margin: 0 0 10px;
+}
+
+.preview-section__subtitle {
+	font-size: 14px;
+	color: var(--fg-dim);
+	max-width: 520px;
+	margin: 0 auto;
+	line-height: 1.55;
+}

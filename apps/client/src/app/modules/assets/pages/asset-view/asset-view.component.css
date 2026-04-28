@@ -1,0 +1,31 @@
+.asset-view__container {
+	max-width: 1240px;
+	margin: 0 auto;
+	padding: 24px;
+}
+
+.asset-view__grid {
+	display: grid;
+	grid-template-columns: 1fr 320px;
+	gap: 20px;
+}
+
+.asset-view__not-ready {
+	display: grid;
+	place-items: center;
+	aspect-ratio: 16 / 9;
+	color: var(--fg-dim);
+	font-size: 14px;
+}
+
+.asset-view__rail {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+@media (max-width: 860px) {
+	.asset-view__grid {
+		grid-template-columns: 1fr;
+	}
+}

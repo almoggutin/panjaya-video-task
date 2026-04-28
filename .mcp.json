@@ -1,0 +1,31 @@
+{
+	"mcpServers": {
+		"aws": {
+			"command": "uvx",
+			"args": [
+				"mcp-proxy-for-aws@latest",
+				"https://aws-mcp.us-east-1.api.aws/mcp",
+				"--metadata",
+				"AWS_REGION=us-east-1"
+			],
+			"env": {}
+		},
+		"chrome-devtools": {
+			"command": "npx",
+			"args": ["-y", "chrome-devtools-mcp@latest"],
+			"env": {}
+		},
+		"markitdown": {
+			"command": "npx",
+			"args": ["-y", "markitdown-mcp-npx"],
+			"env": {}
+		},
+		"postman": {
+			"command": "npx",
+			"args": ["-y", "@postman/postman-mcp-server@latest", "--full"],
+			"env": {
+				"POSTMAN_API_KEY": "${POSTMAN_API_KEY}"
+			}
+		}
+	}
+}

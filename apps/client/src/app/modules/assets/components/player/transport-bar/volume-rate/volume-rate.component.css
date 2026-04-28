@@ -1,0 +1,33 @@
+.volume-rate {
+	display: contents;
+
+	@media (max-width: 639px) {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		width: 100%;
+	}
+}
+
+.volume-rate__volume {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+
+	@media (max-width: 639px) {
+		flex: 1;
+	}
+}
+
+.volume-rate__volume-icon {
+	color: var(--fg-dim);
+}
+
+.volume-rate__volume-slider {
+	width: 80px;
+	accent-color: var(--sand);
+
+	@media (max-width: 639px) {
+		width: 100%;
+	}
+}

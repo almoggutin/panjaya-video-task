@@ -1,0 +1,31 @@
+{
+	"recommendations": [
+		"nrwl.angular-console",
+		"esbenp.prettier-vscode",
+		"dbaeumer.vscode-eslint",
+		"ms-playwright.playwright",
+		"firsttris.vscode-jest-runner",
+		"bierner.markdown-preview-github-styles",
+		"christian-kohler.path-intellisense",
+		"jock.svg",
+		"redhat.vscode-yaml",
+		"ms-vscode.makefile-tools",
+		"xabikos.JavaScriptSnippets",
+		"oderwat.indent-rainbow",
+		"kisstkondoros.vscode-gutter-preview",
+		"ecmel.vscode-html-css",
+		"naumovs.color-highlight",
+		"formulahendry.auto-rename-tag",
+		"formulahendry.auto-close-tag",
+		"VisualStudioExptTeam.vscodeintellicode",
+		"yzhang.markdown-all-in-one",
+		"anthropic.claude-code",
+		"Angular.ng-template",
+		"johnpapa.Angular2",
+		"ms-python.python",
+		"ms-python.debugpy",
+		"ms-python.vscode-pylance",
+		"ms-python.vscode-python-envs",
+		"KevinRose.vsc-python-indent"
+	]
+}

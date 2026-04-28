@@ -1,0 +1,45 @@
+.waveform {
+	margin-top: 16px;
+	background: var(--panel);
+	border: 1px solid var(--line-soft);
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+.waveform__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px 12px;
+	border-bottom: 1px solid var(--line-soft);
+}
+
+.waveform__label {
+	font-size: 10px;
+	color: var(--fg-dim);
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}
+
+.waveform__legend {
+	display: flex;
+	gap: 12px;
+	font-size: 10px;
+}
+
+.waveform__legend-item {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.waveform__legend-line {
+	width: 8px;
+	height: 2px;
+}
+
+.waveform__track-label {
+	padding: 4px 12px 0;
+	font-size: 9px;
+	color: var(--fg-faint);
+}

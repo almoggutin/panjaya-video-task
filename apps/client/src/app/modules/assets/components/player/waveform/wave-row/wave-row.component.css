@@ -1,0 +1,22 @@
+.wave-row {
+	padding: 6px 12px 10px;
+	cursor: pointer;
+	position: relative;
+}
+
+.wave-row__bars {
+	height: 48px;
+	display: flex;
+	align-items: center;
+	gap: 1px;
+	position: relative;
+}
+
+.wave-row__playhead {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	background: var(--fg);
+	pointer-events: none;
+}

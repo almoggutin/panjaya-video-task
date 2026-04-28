@@ -1,0 +1,34 @@
+.changelog-entry {
+	position: relative;
+	padding-bottom: 24px;
+}
+
+.changelog-entry__dot {
+	position: absolute;
+	left: -26px;
+	top: 5px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 2px solid var(--ink);
+}
+
+.changelog-entry__header {
+	display: flex;
+	align-items: baseline;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+
+.changelog-entry__version {
+	font-size: 16px;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+}
+
+.changelog-entry__panel {
+	background: var(--panel);
+	border: 1px solid var(--line-soft);
+	border-radius: var(--radius);
+	overflow: hidden;
+}

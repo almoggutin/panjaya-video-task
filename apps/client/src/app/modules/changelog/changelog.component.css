@@ -1,0 +1,19 @@
+.changelog-page {
+	flex: 1;
+}
+
+.changelog-page__intro {
+	margin-bottom: 24px;
+}
+
+.changelog-page__title {
+	font-size: 24px;
+	font-weight: 600;
+	letter-spacing: -0.015em;
+	margin-bottom: 6px;
+}
+
+.changelog-page__subtitle {
+	font-size: 13px;
+	color: var(--fg-dim);
+}

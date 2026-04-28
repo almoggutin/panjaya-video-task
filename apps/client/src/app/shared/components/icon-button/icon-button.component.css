@@ -1,0 +1,27 @@
+.icon-btn {
+	width: 30px;
+	height: 30px;
+	display: grid;
+	place-items: center;
+	border: 1px solid var(--line-soft);
+	background: transparent;
+	color: var(--fg-dim);
+	border-radius: 4px;
+	cursor: pointer;
+	flex-shrink: 0;
+	transition:
+		color 0.12s,
+		border-color 0.12s,
+		background 0.12s;
+
+	&:hover {
+		color: var(--fg);
+		border-color: var(--line);
+		background: var(--panel);
+	}
+
+	&:disabled {
+		opacity: 0.45;
+		cursor: not-allowed;
+	}
+}

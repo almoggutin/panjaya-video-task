@@ -1,0 +1,36 @@
+.asset-list__header-actions {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: 100%;
+
+	@media (min-width: 640px) {
+		width: auto;
+		flex-shrink: 0;
+	}
+}
+
+.asset-list__search {
+	flex: 1;
+	min-width: 0;
+	padding: 7px 12px;
+	font-size: 13px;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--panel-2);
+	color: var(--fg);
+	outline: none;
+
+	&::placeholder {
+		color: var(--fg-faint);
+	}
+
+	&:focus {
+		border-color: var(--accent);
+	}
+
+	@media (min-width: 640px) {
+		flex: none;
+		width: 220px;
+	}
+}

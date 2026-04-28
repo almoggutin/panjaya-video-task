@@ -1,0 +1,15 @@
+{
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.python"
+	},
+	"python.defaultInterpreterPath": "${workspaceFolder}/apps/server/.venv/bin/python",
+	"python.analysis.extraPaths": [
+		"${workspaceFolder}/apps/server",
+		"${workspaceFolder}/apps/server/.venv/lib/python3.12/site-packages"
+	],
+	"python.analysis.reportUntypedBaseClass": "none",
+	"python.analysis.reportUnknownMemberType": "none"
+}

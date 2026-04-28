@@ -1,0 +1,26 @@
+.header__mobile-menu-nav {
+	display: flex;
+	flex-direction: column;
+	padding: 12px var(--gutter) 8px;
+	gap: 2px;
+}
+
+.header__mobile-menu-link {
+	padding: 10px 12px;
+	font-size: 15px;
+	color: var(--fg-dim);
+	border-radius: 4px;
+	transition:
+		color 0.12s,
+		background 0.12s;
+
+	&:hover {
+		color: var(--fg);
+		background: var(--panel);
+	}
+
+	&.active {
+		color: var(--fg);
+		background: var(--panel);
+	}
+}

@@ -1,0 +1,34 @@
+#!/usr/bin/env sh
+
+commit_message_file="$1"
+branch_name=$(git symbolic-ref --short HEAD)
+commit_type=""
+
+case "$branch_name" in
+  feature/*)
+    commit_type="feat"
+    ;;
+  bugfix/*|fix/*)
+    commit_type="fix"
+    ;;
+  hotfix/*)
+    commit_type="fix"
+    ;;
+  release/*)
+    commit_type="chore"
+    ;;
+esac
+
+if [ -n "$commit_type" ]; then
+  # Extract issue number if present (format: feature/123-description or feature/#123-description)
+  issue_num=$(echo "$branch_name" | grep -oP '(?<=/)[#]?\K\d+' || true)
+
+  if [ -n "$issue_num" ]; then
+    prefix="${commit_type}(#${issue_num}): "
+  else
+    prefix="${commit_type}: "
+  fi
+
+  sed -e "1s#^#${prefix}#" -i.bak "$commit_message_file"
+  rm "$commit_message_file.bak"
+fi

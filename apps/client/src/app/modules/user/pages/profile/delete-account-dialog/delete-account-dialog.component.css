@@ -1,0 +1,24 @@
+.delete-account-dialog__title {
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+.delete-account-dialog__body {
+	font-size: 13px;
+	color: var(--fg-dim);
+	margin-bottom: 20px;
+	line-height: 1.5;
+}
+
+.delete-account-dialog__form {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.delete-account-dialog__actions {
+	display: flex;
+	gap: 8px;
+	justify-content: flex-end;
+}

@@ -1,0 +1,75 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "client:start:development",
+			"type": "npm",
+			"script": "client:start",
+			"isBackground": true,
+			"problemMatcher": {
+				"pattern": { "regexp": "^$" },
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "\\> vite",
+					"endsPattern": "Local:.+http://localhost"
+				}
+			}
+		},
+		{
+			"label": "client:start:staging",
+			"type": "npm",
+			"script": "client:start:staging",
+			"isBackground": true,
+			"problemMatcher": {
+				"pattern": { "regexp": "^$" },
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "\\> vite",
+					"endsPattern": "Local:.+http://localhost"
+				}
+			}
+		},
+		{
+			"label": "client:start:production",
+			"type": "npm",
+			"script": "client:start:production",
+			"isBackground": true,
+			"problemMatcher": {
+				"pattern": { "regexp": "^$" },
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "\\> vite",
+					"endsPattern": "Local:.+http://localhost"
+				}
+			}
+		},
+		{
+			"label": "server:start:local",
+			"type": "npm",
+			"script": "server:start",
+			"isBackground": true,
+			"problemMatcher": {
+				"pattern": { "regexp": "^$" },
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "Started server process",
+					"endsPattern": "Application startup complete"
+				}
+			}
+		},
+		{
+			"label": "server:start:development",
+			"type": "npm",
+			"script": "server:start:development",
+			"isBackground": true,
+			"problemMatcher": {
+				"pattern": { "regexp": "^$" },
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "Started server process",
+					"endsPattern": "Application startup complete"
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,6 @@
+.asset-delete-dialog__desc {
+	color: var(--fg-dim);
+	font-size: 13px;
+	line-height: 1.6;
+	margin-bottom: 16px;
+}

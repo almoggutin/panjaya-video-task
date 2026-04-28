@@ -1,0 +1,38 @@
+.changelog-note {
+	padding: 10px 14px;
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	font-size: 13px;
+}
+
+.changelog-note--bordered {
+	border-bottom: 1px solid var(--line-soft);
+}
+
+.changelog-note__kind {
+	min-width: 64px;
+	text-align: center;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	padding: 2px 0;
+	border-radius: 2px;
+	border: 1px solid var(--line-soft);
+	font-variant-numeric: tabular-nums;
+	flex-shrink: 0;
+}
+
+.changelog-note__text {
+	flex: 1;
+	color: var(--fg);
+	line-height: 1.5;
+}
+
+.changelog-note__issue {
+	font-size: 11px;
+	color: var(--sand);
+	font-variant-numeric: tabular-nums;
+	flex-shrink: 0;
+	align-self: center;
+}

@@ -1,0 +1,17 @@
+.table__th--sortable {
+	cursor: pointer;
+	user-select: none;
+
+	&:hover {
+		color: var(--fg-soft);
+	}
+}
+
+.table__th--sorted {
+	color: var(--fg);
+}
+
+.table__sort-icon {
+	opacity: 0.5;
+	font-size: 10px;
+}

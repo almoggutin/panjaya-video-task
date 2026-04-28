@@ -1,0 +1,25 @@
+.processing-indicator {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+
+.processing-indicator__progress {
+	height: 4px;
+	background: var(--line-soft);
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.processing-indicator__progress-fill {
+	height: 100%;
+	background: var(--accent);
+	border-radius: 2px;
+	transition: width 0.4s ease;
+}
+
+.processing-indicator__error {
+	font-size: 13px;
+	color: var(--danger);
+}

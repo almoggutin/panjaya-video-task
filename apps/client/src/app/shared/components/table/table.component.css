@@ -1,0 +1,25 @@
+.table-wrap {
+	overflow-x: auto;
+	height: 100%;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+
+	thead tr {
+		border-bottom: 1px solid var(--line);
+	}
+
+	th {
+		padding: 10px 16px;
+		text-align: left;
+		font-size: 11px;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--fg-faint);
+		white-space: nowrap;
+	}
+}

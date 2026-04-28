@@ -1,0 +1,17 @@
+.table-pagination {
+	border-top: 1px solid var(--line-soft);
+	padding: 10px 16px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	font-size: 12px;
+	color: var(--fg-dim);
+	flex-wrap: wrap;
+	background: var(--panel);
+	flex-shrink: 0;
+}
+
+.table-pagination__info {
+	font-family: var(--font-mono);
+}

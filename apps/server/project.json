@@ -1,0 +1,96 @@
+{
+	"name": "server",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"projectType": "application",
+	"sourceRoot": "apps/server/video_audio_server",
+	"targets": {
+		"lock": {
+			"executor": "@nxlv/python:lock",
+			"options": {
+				"update": false
+			}
+		},
+		"sync": {
+			"executor": "@nxlv/python:sync",
+			"options": {}
+		},
+		"add": {
+			"executor": "@nxlv/python:add",
+			"options": {}
+		},
+		"update": {
+			"executor": "@nxlv/python:update",
+			"options": {}
+		},
+		"remove": {
+			"executor": "@nxlv/python:remove",
+			"options": {}
+		},
+		"build": {
+			"executor": "@nxlv/python:build",
+			"outputs": ["{projectRoot}/dist"],
+			"options": {
+				"outputPath": "{projectRoot}/dist",
+				"publish": false,
+				"lockedVersions": true,
+				"bundleLocalDependencies": true
+			},
+			"cache": true
+		},
+		"lint": {
+			"executor": "@nxlv/python:ruff-check",
+			"outputs": [],
+			"options": {
+				"lintFilePatterns": ["video_audio_server", "tests"]
+			},
+			"cache": true
+		},
+		"format": {
+			"executor": "@nxlv/python:ruff-format",
+			"outputs": [],
+			"options": {
+				"filePatterns": ["video_audio_server", "tests"]
+			},
+			"cache": true
+		},
+		"test": {
+			"executor": "@nxlv/python:run-commands",
+			"outputs": ["{workspaceRoot}/reports/{projectRoot}/unittests", "{workspaceRoot}/coverage/{projectRoot}"],
+			"options": {
+				"command": "ENVIRONMENT=test poetry run pytest tests/",
+				"cwd": "{projectRoot}"
+			},
+			"cache": true
+		},
+		"install": {
+			"executor": "@nxlv/python:install",
+			"options": {
+				"silent": false,
+				"args": "",
+				"cacheDir": ".cache/pypoetry",
+				"verbose": false,
+				"debug": false
+			}
+		},
+		"serve": {
+			"executor": "nx:run-commands",
+			"options": {
+				"command": ".venv/bin/uvicorn video_audio_server.main:app --reload --host 0.0.0.0 --port 8000",
+				"cwd": "{projectRoot}"
+			}
+		},
+		"worker": {
+			"executor": "nx:run-commands",
+			"options": {
+				"command": ".venv/bin/arq video_audio_server.worker.WorkerSettings",
+				"cwd": "{projectRoot}"
+			}
+		}
+	},
+	"tags": [],
+	"release": {
+		"version": {
+			"versionActions": "@nxlv/python/release/version-actions"
+		}
+	}
+}

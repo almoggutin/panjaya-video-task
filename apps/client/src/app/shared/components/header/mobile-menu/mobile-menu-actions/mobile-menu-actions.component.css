@@ -1,0 +1,41 @@
+.header__mobile-menu-cta {
+	padding: 4px var(--gutter) 12px;
+}
+
+.header__mobile-menu-actions {
+	display: flex;
+	flex-direction: column;
+	padding: 4px var(--gutter) 12px;
+	gap: 2px;
+}
+
+.header__mobile-menu-action {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 12px;
+	font-size: 14px;
+	color: var(--fg-dim);
+	border-radius: 4px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	text-align: left;
+	transition:
+		color 0.12s,
+		background 0.12s;
+
+	&:hover {
+		color: var(--fg);
+		background: var(--panel);
+	}
+}
+
+.header__mobile-menu-action--logout {
+	color: var(--danger);
+
+	&:hover {
+		color: var(--danger);
+	}
+}

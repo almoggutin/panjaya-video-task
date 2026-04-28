@@ -1,0 +1,46 @@
+name: Dependency Review
+
+# To re-enable on PRs: remove `workflow_dispatch` and uncomment the `pull_request` block below.
+on:
+    workflow_dispatch:
+    # pull_request:
+    #     branches:
+    #         - dev
+
+permissions:
+    contents: read
+    pull-requests: write
+
+jobs:
+    dependency-review:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Dependency review
+              uses: actions/dependency-review-action@v4
+              with:
+                  fail-on-severity: high
+                  license-check: true
+                  vulnerability-check: true
+                  deny-licenses: LGPL-2.0, GPL-3.0
+                  comment-summary-in-pr: always
+
+    auto-approve-patch:
+        runs-on: ubuntu-latest
+        if: github.actor == 'dependabot[bot]'
+        needs: dependency-review
+        steps:
+            - name: Fetch Dependabot metadata
+              id: metadata
+              uses: dependabot/fetch-metadata@v2
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Auto-approve patch and minor updates
+              if: steps.metadata.outputs.update-type == 'version-update:semver-patch' || steps.metadata.outputs.update-type == 'version-update:semver-minor'
+              run: gh pr review --approve "$PR_URL"
+              env:
+                  PR_URL: ${{ github.event.pull_request.html_url }}
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

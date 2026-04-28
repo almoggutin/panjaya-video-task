@@ -1,0 +1,50 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "client",
+			"type": "chrome",
+			"request": "attach",
+			"urlFilter": "http://localhost:4200/*",
+			"webRoot": "${workspaceFolder}/apps/client/src",
+			"preLaunchTask": "client:start:${input:clientEnv}",
+			"sourceMapPathOverrides": {
+				"/@fs/*": "${workspaceFolder}/*"
+			}
+		},
+		{
+			"name": "server",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "uvicorn",
+			"args": ["video_audio_server.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"],
+			"envFile": "${workspaceFolder}/apps/server/envs/.env.${input:serverEnv}",
+			"cwd": "${workspaceFolder}/apps/server",
+			"python": "${workspaceFolder}/apps/server/.venv/bin/python",
+			"preLaunchTask": "server:start:${input:serverEnv}"
+		}
+	],
+	"inputs": [
+		{
+			"id": "clientEnv",
+			"type": "pickString",
+			"description": "Select environment",
+			"options": [
+				{ "label": "Development", "value": "development" },
+				{ "label": "Staging", "value": "staging" },
+				{ "label": "Production", "value": "production" }
+			],
+			"default": "development"
+		},
+		{
+			"id": "serverEnv",
+			"type": "pickString",
+			"description": "Select environment",
+			"options": [
+				{ "label": "Local", "value": "local" },
+				{ "label": "Development", "value": "development" }
+			],
+			"default": "local"
+		}
+	]
+}

@@ -1,0 +1,19 @@
+.asset-topbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-bottom: 16px;
+}
+
+.asset-topbar__back {
+	width: 36px;
+	height: 36px;
+	font-size: 18px;
+}
+
+.asset-topbar__export-btns {
+	display: flex;
+	gap: 8px;
+}

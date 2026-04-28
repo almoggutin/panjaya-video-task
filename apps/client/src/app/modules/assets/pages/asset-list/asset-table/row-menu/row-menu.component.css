@@ -1,0 +1,47 @@
+.row-menu {
+	position: relative;
+}
+
+.row-menu__trigger {
+	width: 26px;
+	height: 26px;
+}
+
+.row-menu__dropdown {
+	position: fixed;
+	width: 180px;
+	background: var(--panel-2);
+	border: 1px solid var(--line);
+	border-radius: 6px;
+	padding: 4px;
+	z-index: 50;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.row-menu__item {
+	width: 100%;
+	padding: 7px 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 12px;
+	cursor: pointer;
+	border-radius: 3px;
+	color: var(--fg);
+	background: transparent;
+	border: none;
+	text-align: left;
+	transition: background 0.1s;
+
+	&:hover {
+		background: var(--panel);
+	}
+}
+
+.row-menu__item--danger {
+	color: var(--danger);
+
+	&:hover {
+		background: color-mix(in oklch, var(--danger), transparent 90%);
+	}
+}

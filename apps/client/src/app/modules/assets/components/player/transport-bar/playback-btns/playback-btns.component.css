@@ -1,0 +1,27 @@
+.playback-btns {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+}
+
+.transport-bar__row--centered .playback-btns {
+	gap: 16px;
+}
+
+.transport-bar__row--centered .playback-btns .icon-btn {
+	width: 48px;
+	height: 48px;
+}
+
+.playback-btns__play-btn {
+	width: 36px;
+	height: 36px;
+	background: var(--sand) !important;
+	color: var(--ink) !important;
+	border-color: var(--sand) !important;
+}
+
+.transport-bar__row--centered .playback-btns__play-btn {
+	width: 56px !important;
+	height: 56px !important;
+}

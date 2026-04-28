@@ -1,0 +1,9 @@
+.blocking-loader {
+	position: fixed;
+	inset: 0;
+	z-index: 200;
+	background: var(--ink);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

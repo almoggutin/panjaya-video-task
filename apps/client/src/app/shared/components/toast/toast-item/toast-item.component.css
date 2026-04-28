@@ -1,0 +1,50 @@
+.toast {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 12px 14px;
+	border-radius: var(--radius);
+	border: none;
+	font-size: 13px;
+	background: var(--sand);
+	color: var(--ink);
+	animation: toast-in 0.15s ease-out;
+}
+
+.toast--error {
+	background: var(--danger);
+}
+
+.toast--warn {
+	background: var(--warn);
+}
+
+.toast__message {
+	flex: 1;
+}
+
+.toast__close {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: inherit;
+	font-size: 16px;
+	line-height: 1;
+	opacity: 0.6;
+	padding: 0;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+@keyframes toast-in {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

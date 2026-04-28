@@ -1,0 +1,23 @@
+.asset-upload__container {
+	max-width: 680px;
+}
+
+.asset-upload__back {
+	margin-bottom: 20px;
+	width: 36px;
+	height: 36px;
+}
+
+.asset-upload__heading {
+	margin-bottom: 24px;
+}
+
+.asset-upload__subtitle {
+	margin-top: 6px;
+	font-size: 13px;
+	color: var(--fg-dim);
+}
+
+.asset-upload__container .stepper {
+	margin-bottom: 24px;
+}

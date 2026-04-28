@@ -1,0 +1,22 @@
+name: PR Setup
+
+on:
+    pull_request:
+        types: [opened]
+        branches:
+            - main
+            - develop
+
+jobs:
+    setup-pr:
+        runs-on: ubuntu-latest
+        permissions:
+            pull-requests: write
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Set PR title and link Jira ticket
+              env:
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: ./.github/scripts/pr-setup.sh "${{ github.head_ref }}" "${{ github.event.pull_request.html_url }}"

@@ -1,0 +1,1 @@
+JTI_REDIS_PREFIX = "jti:"

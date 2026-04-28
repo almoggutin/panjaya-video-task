@@ -1,0 +1,7 @@
+{
+	"*.{html,js,ts,css,scss,json,yml,md}": ["prettier --write"],
+	"apps/server/**/*.py": [
+		"apps/server/.venv/bin/ruff format --config apps/server/pyproject.toml",
+		"apps/server/.venv/bin/ruff check --fix --config apps/server/pyproject.toml"
+	]
+}

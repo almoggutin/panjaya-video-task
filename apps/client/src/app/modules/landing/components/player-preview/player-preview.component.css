@@ -1,0 +1,119 @@
+.player-preview {
+	background: var(--panel);
+	border: 1px solid var(--line-soft);
+	border-radius: var(--radius);
+	overflow: hidden;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.player-preview__header {
+	padding: 10px 14px;
+	border-bottom: 1px solid var(--line-soft);
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.player-preview__chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	height: 20px;
+	padding: 0 8px;
+	border-radius: 3px;
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.01em;
+	color: var(--ok);
+	border: 1px solid color-mix(in oklch, var(--ok), transparent 65%);
+}
+
+.player-preview__chip-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: currentColor;
+}
+
+.player-preview__meta {
+	font-size: 11px;
+	color: var(--fg-dim);
+	font-variant-numeric: tabular-nums;
+}
+
+.player-preview__video {
+	aspect-ratio: 16 / 9;
+	background: var(--color-slate-950);
+	position: relative;
+	display: grid;
+	place-items: center;
+}
+
+.player-preview__play-btn {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: color-mix(in oklch, var(--sand), transparent 5%);
+	color: #fff;
+	display: grid;
+	place-items: center;
+	transition: background 0.15s, transform 0.15s;
+
+	&:hover {
+		background: var(--sand);
+		transform: scale(1.06);
+	}
+}
+
+.player-preview__waveform {
+	height: 40px;
+	padding: 0 14px;
+	display: flex;
+	align-items: center;
+	gap: 1px;
+	border-top: 1px solid var(--line-soft);
+	border-bottom: 1px solid var(--line-soft);
+}
+
+.player-preview__bar {
+	flex: 1;
+	background: var(--fg-faint);
+	border-radius: 1px;
+	min-height: 2px;
+
+	&.played {
+		background: var(--sand);
+	}
+}
+
+.player-preview__controls {
+	padding: 10px 14px;
+	display: flex;
+	align-items: center;
+}
+
+.player-preview__track-toggle {
+	flex: 1;
+	display: flex;
+	border: 1px solid var(--line-soft);
+	border-radius: 4px;
+	padding: 2px;
+	gap: 0;
+}
+
+.player-preview__track {
+	flex: 1;
+	padding: 5px 10px;
+	font-size: 12px;
+	text-align: center;
+	color: var(--fg-dim);
+	border-radius: 3px;
+	transition: background 0.12s, color 0.12s;
+
+	&.active {
+		background: var(--sand);
+		color: var(--ink);
+		font-weight: 500;
+	}
+}

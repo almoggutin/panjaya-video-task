@@ -1,0 +1,32 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtualenv
+.venv/
+
+# Test / coverage
+.coverage
+.mypy_cache/
+coverage/
+reports/
+tests/
+
+# Env files
+envs/.env.*
+!envs/.env.example
+!envs/.env.local
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Misc
+.temp
+.tmp

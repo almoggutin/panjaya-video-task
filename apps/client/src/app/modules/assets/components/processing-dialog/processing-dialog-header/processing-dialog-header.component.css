@@ -1,0 +1,23 @@
+.processing-dialog__header {
+	gap: 10px;
+}
+
+.processing-dialog__title {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	flex: 1;
+	min-width: 0;
+}
+
+.processing-dialog__title h3 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.processing-dialog__subtitle {
+	font-size: 11px;
+	color: var(--fg-faint);
+	font-family: var(--font-mono);
+}
