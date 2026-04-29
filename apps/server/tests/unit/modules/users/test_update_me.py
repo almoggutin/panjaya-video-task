@@ -1,6 +1,7 @@
 from unittest.mock import AsyncMock, MagicMock
 
 import pytest
+from pydantic import BaseModel
 from video_audio_server.core.models.error_models import ConflictError, NotFoundError
 from video_audio_server.modules.users.dtos.update_profile_dto import (
     UpdateProfileRequest,
@@ -25,8 +26,14 @@ def _make_user(
     return user
 
 
+async def _apply_patch(entity: MagicMock, data: BaseModel) -> None:
+    for key, value in data.model_dump(exclude_unset=True).items():
+        setattr(entity, key, value)
+
+
 def _make_service() -> tuple[UsersService, AsyncMock]:
     repo = AsyncMock(spec=UserRepository)
+    repo.patch.side_effect = _apply_patch
     return UsersService(repo), repo
 
 

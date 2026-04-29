@@ -74,13 +74,31 @@ async def test_list_assets_returns_paginated_response(
     auth_headers: dict[str, str],
     test_asset: dict[str, Any],
 ) -> None:
+    user_id: str = (await client.get("/users/me", headers=auth_headers)).json()["id"]
+    asset_id = test_asset["assetId"]
+    s3_event: dict[str, Any] = {
+        "Records": [
+            {
+                "s3": {
+                    "bucket": {"name": settings.s3_bucket},
+                    "object": {"key": f"{user_id}/{asset_id}/video.mp4"},
+                }
+            }
+        ]
+    }
+    await client.post(
+        "/assets/webhooks/s3-event",
+        json=s3_event,
+        headers={"Authorization": settings.worker_job_secret},
+    )
+
     resp = await client.get("/assets", headers=auth_headers)
 
     assert resp.status_code == 200
     data = resp.json()
     assert data["total"] == 1
     assert len(data["items"]) == 1
-    assert data["items"][0]["id"] == test_asset["assetId"]
+    assert data["items"][0]["id"] == asset_id
 
 
 @pytest.mark.asyncio
@@ -114,23 +132,21 @@ async def test_s3_webhook_transitions_asset_to_queued(
     auth_headers: dict[str, str],
     test_asset: dict[str, Any],
 ) -> None:
+    user_id: str = (await client.get("/users/me", headers=auth_headers)).json()["id"]
     asset_id: str = test_asset["assetId"]
-
+    s3_event: dict[str, Any] = {
+        "Records": [
+            {
+                "s3": {
+                    "bucket": {"name": settings.s3_bucket},
+                    "object": {"key": f"{user_id}/{asset_id}/video.mp4"},
+                },
+            }
+        ]
+    }
     resp = await client.post(
         "/assets/webhooks/s3-event",
-        json={
-            "Records": [
-                {
-                    "s3": {
-                        "bucket": {"name": settings.s3_bucket},
-                        "object": {
-                            "key": f"user/test/{asset_id}/video.mp4",
-                            "userMetadata": {"x-amz-meta-asset-id": asset_id},
-                        },
-                    },
-                }
-            ]
-        },
+        json=s3_event,
         headers={"Authorization": settings.worker_job_secret},
     )
     assert resp.status_code == 204

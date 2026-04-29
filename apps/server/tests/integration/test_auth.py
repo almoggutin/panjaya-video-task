@@ -15,9 +15,9 @@ async def test_signup_returns_tokens(client: AsyncClient) -> None:
 
     assert resp.status_code == 201
     data = resp.json()
-    assert data["access_token"]
-    assert data["refresh_token"]
-    assert data["expires_in"] > 0
+    assert data["accessToken"]
+    assert data["refreshToken"]
+    assert data["expiresIn"] > 0
 
 
 @pytest.mark.asyncio
@@ -40,7 +40,7 @@ async def test_login_returns_tokens(client: AsyncClient) -> None:
     )
 
     assert resp.status_code == 200
-    assert resp.json()["access_token"]
+    assert resp.json()["accessToken"]
 
 
 @pytest.mark.asyncio
@@ -60,14 +60,14 @@ async def test_login_wrong_password_returns_unauthorized(client: AsyncClient) ->
 @pytest.mark.asyncio
 async def test_refresh_issues_new_token_pair(client: AsyncClient) -> None:
     resp = await client.post("/auth/signup", json=_SIGNUP_PAYLOAD)
-    refresh_token = resp.json()["refresh_token"]
+    refresh_token = resp.json()["refreshToken"]
 
     resp = await client.post("/auth/refresh", json={"refresh_token": refresh_token})
 
     assert resp.status_code == 200
     data = resp.json()
-    assert data["access_token"]
-    assert data["refresh_token"] != refresh_token
+    assert data["accessToken"]
+    assert data["refreshToken"] != refresh_token
 
 
 @pytest.mark.asyncio
@@ -75,13 +75,13 @@ async def test_full_auth_cycle(client: AsyncClient) -> None:
     # Signup
     resp = await client.post("/auth/signup", json=_SIGNUP_PAYLOAD)
     assert resp.status_code == 201
-    refresh_token = resp.json()["refresh_token"]
+    refresh_token = resp.json()["refreshToken"]
 
     # Refresh
     resp = await client.post("/auth/refresh", json={"refresh_token": refresh_token})
     assert resp.status_code == 200
-    new_access_token = resp.json()["access_token"]
-    new_refresh_token = resp.json()["refresh_token"]
+    new_access_token = resp.json()["accessToken"]
+    new_refresh_token = resp.json()["refreshToken"]
 
     # Logout
     resp = await client.post(

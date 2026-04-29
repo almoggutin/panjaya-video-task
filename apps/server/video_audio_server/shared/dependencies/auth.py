@@ -9,14 +9,17 @@ from video_audio_server.modules.users.entities.user_entity import User
 from video_audio_server.shared.dependencies.db import get_db
 from video_audio_server.shared.dependencies.repositories import get_jti_repository
 
-_bearer = HTTPBearer()
+_bearer = HTTPBearer(auto_error=False)
 
 
 async def get_current_user(
-    credentials: HTTPAuthorizationCredentials = Depends(_bearer),
+    credentials: HTTPAuthorizationCredentials | None = Depends(_bearer),
     db: AsyncSession = Depends(get_db),
     jti_repo: JtiRepository = Depends(get_jti_repository),
 ) -> User:
+    if credentials is None:
+        raise UnauthorizedError("Not authenticated")
+
     try:
         claims = decode_access_token(credentials.credentials)
     except (DecodeError, ExpiredSignatureError) as err:

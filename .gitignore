@@ -55,6 +55,7 @@ apps/server/envs/.env.*
 !.env.local
 !apps/server/envs/.env.example
 !apps/server/envs/.env.local
+!apps/server/envs/.env.test
 
 # Temp directory
 .temp

@@ -1,5 +1,25 @@
+from collections.abc import AsyncGenerator
+
 import pytest
+from fastapi import FastAPI
 from httpx import AsyncClient
+from video_audio_server.core.services.sse_service import SseService
+from video_audio_server.shared.dependencies.services import get_sse_service
+
+
+class _MockSseService(SseService):
+    def __init__(self) -> None:
+        pass
+
+    async def subscribe(self, user_id: str) -> AsyncGenerator[str, None]:
+        yield "event: ping\ndata: {}\n\n"
+
+
+@pytest.fixture(autouse=True)
+def _mock_sse(app: FastAPI) -> None:
+    app.dependency_overrides[get_sse_service] = lambda: _MockSseService()
+    yield
+    del app.dependency_overrides[get_sse_service]
 
 
 @pytest.mark.asyncio

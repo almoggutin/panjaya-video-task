@@ -121,7 +121,7 @@ Amazon S3
      │  s3:ObjectCreated event notification
      ▼
 Amazon SQS (standard queue + dead-letter queue)
-     │  long polling
+     │
      ▼
 Amazon EKS — Worker pods (Deployment)
   ├── Pod 1: arq video_audio_server.worker.WorkerSettings

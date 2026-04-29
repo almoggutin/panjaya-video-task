@@ -1,2 +1,3 @@
 .coverage
+.coverage.*
 .mypy_cache/
