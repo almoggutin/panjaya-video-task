@@ -1,27 +1,21 @@
 <mxfile host="65bd71144e">
     <diagram id="cloud-arch" name="Cloud Architecture">
-        <mxGraphModel dx="1069" dy="1634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="960" math="0" shadow="0">
+        <mxGraphModel dx="547" dy="1266" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="960" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-
-                <!-- Zone containers -->
                 <mxCell id="g-internet" value="Internet" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_internet_alt2;strokeColor=#232F3E;fillColor=#ffffff;verticalLabelPosition=top;align=center;html=1;verticalAlign=bottom;spacingTop=25;dashed=0;labelBackgroundColor=#ffffff;fontSize=13;fontStyle=1;" parent="1" vertex="1">
                     <mxGeometry x="10" y="10" width="120" height="940" as="geometry"/>
                 </mxCell>
                 <mxCell id="g-aws" value="AWS Cloud" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=#ffffff;verticalLabelPosition=top;align=center;html=1;verticalAlign=bottom;spacingTop=25;dashed=0;labelBackgroundColor=#ffffff;fontSize=13;fontStyle=1;" parent="1" vertex="1">
                     <mxGeometry x="150" y="10" width="1730" height="940" as="geometry"/>
                 </mxCell>
-
-                <!-- Tier labels -->
                 <mxCell id="lbl-client-tier" value="Client Tier" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontStyle=1;fontSize=13;" parent="1" vertex="1">
                     <mxGeometry x="166" y="50" width="140" height="28" as="geometry"/>
                 </mxCell>
                 <mxCell id="lbl-server-tier" value="Server + Worker Tier" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontStyle=1;fontSize=13;" parent="1" vertex="1">
                     <mxGeometry x="166" y="295" width="200" height="28" as="geometry"/>
                 </mxCell>
-
-                <!-- VPC (server tier only) -->
                 <mxCell id="g-vpc" value="VPC" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_vpc;strokeColor=#8C4FFF;fillColor=#F5F0FF;verticalLabelPosition=top;align=center;html=1;verticalAlign=bottom;spacingTop=25;dashed=0;labelBackgroundColor=#ffffff;fontSize=12;fontStyle=1;" parent="1" vertex="1">
                     <mxGeometry x="590" y="280" width="880" height="620" as="geometry"/>
                 </mxCell>
@@ -37,21 +31,15 @@
                 <mxCell id="lbl-worker-ng" value="Worker Node Group" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];strokeColor=none;fillColor=none;fontStyle=1;fontSize=11;" parent="1" vertex="1">
                     <mxGeometry x="745" y="568" width="160" height="28" as="geometry"/>
                 </mxCell>
-
-                <!-- Browser -->
                 <mxCell id="browser" value="Browser" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#232F3E;labelBackgroundColor=#ffffff;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.user;" parent="1" vertex="1">
                     <mxGeometry x="35" y="380" width="60" height="78" as="geometry"/>
                 </mxCell>
-
-                <!-- Client Tier — CloudFront → S3 Static -->
                 <mxCell id="cf-static" value="CloudFront&#xa;(Client)" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#8C4FFF;labelBackgroundColor=#ffffff;labelBorderColor=none;fontStyle=1;align=center;html=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;" parent="1" vertex="1">
                     <mxGeometry x="240" y="80" width="78" height="78" as="geometry"/>
                 </mxCell>
                 <mxCell id="s3static" value="S3&#xa;Static Assets" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#7AA116;labelBackgroundColor=#ffffff;labelBorderColor=none;fontStyle=1;align=center;html=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" parent="1" vertex="1">
                     <mxGeometry x="1640" y="80" width="78" height="78" as="geometry"/>
                 </mxCell>
-
-                <!-- Server Tier — CloudFront → WAF → API GW → ALB → EKS -->
                 <mxCell id="cf-api" value="CloudFront&#xa;(API)" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#8C4FFF;labelBackgroundColor=#ffffff;labelBorderColor=none;fontStyle=1;align=center;html=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;" parent="1" vertex="1">
                     <mxGeometry x="240" y="420" width="78" height="78" as="geometry"/>
                 </mxCell>
@@ -64,8 +52,6 @@
                 <mxCell id="alb" value="ALB&#xa;(internal)" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#8C4FFF;labelBackgroundColor=#ffffff;labelBorderColor=none;fontStyle=1;align=center;html=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.application_load_balancer;" parent="1" vertex="1">
                     <mxGeometry x="630" y="420" width="78" height="78" as="geometry"/>
                 </mxCell>
-
-                <!-- EKS pods -->
                 <mxCell id="api1" value="API Pod" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#ED7100;labelBackgroundColor=#ffffff;labelBorderColor=none;fontStyle=1;align=center;html=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eks;" parent="1" vertex="1">
                     <mxGeometry x="756" y="415" width="78" height="78" as="geometry"/>
                 </mxCell>
@@ -78,36 +64,24 @@
                 <mxCell id="w2" value="Worker Pod" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#ED7100;labelBackgroundColor=#ffffff;labelBorderColor=none;fontStyle=1;align=center;html=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eks;" parent="1" vertex="1">
                     <mxGeometry x="880" y="600" width="78" height="78" as="geometry"/>
                 </mxCell>
-
-                <!-- Data stores (inside private subnet) -->
                 <mxCell id="rds" value="RDS PostgreSQL" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#C7131F;labelBackgroundColor=#ffffff;labelBorderColor=none;fontStyle=1;align=center;html=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.rds;" parent="1" vertex="1">
                     <mxGeometry x="1170" y="415" width="78" height="78" as="geometry"/>
                 </mxCell>
                 <mxCell id="elasticache" value="ElastiCache&#xa;Redis" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#C7131F;labelBackgroundColor=#ffffff;labelBorderColor=none;fontStyle=1;align=center;html=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.elasticache;" parent="1" vertex="1">
                     <mxGeometry x="1170" y="600" width="78" height="78" as="geometry"/>
                 </mxCell>
-
-                <!-- Managed services (outside VPC, right side) -->
                 <mxCell id="sqs" value="Amazon SQS&#xa;+ DLQ" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#E7157B;labelBackgroundColor=#ffffff;labelBorderColor=none;fontStyle=1;align=center;html=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sqs;" parent="1" vertex="1">
                     <mxGeometry x="1490" y="600" width="78" height="78" as="geometry"/>
                 </mxCell>
                 <mxCell id="s3media" value="S3&#xa;Video &amp; Audio" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#7AA116;labelBackgroundColor=#ffffff;labelBorderColor=none;fontStyle=1;align=center;html=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" parent="1" vertex="1">
                     <mxGeometry x="1640" y="600" width="78" height="78" as="geometry"/>
                 </mxCell>
-
-                <!-- ── Edges ── -->
-
-                <!-- Browser → CloudFront Client (client tier, exits top) -->
                 <mxCell id="e1" value="HTTPS (HTML/JS/CSS)" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;exitX=1;exitY=0.2;exitDx=0;exitDy=0;" parent="1" source="browser" target="cf-static" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-
-                <!-- Browser → CloudFront API (server tier, exits right) -->
                 <mxCell id="e2" value="HTTPS — API + SSE" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="browser" target="cf-api" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-
-                <!-- Browser → S3 Media direct PUT (presigned URL, dashed bottom route) -->
                 <mxCell id="e3" value="direct PUT (presigned URL)" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;dashed=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="browser" target="s3media" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
@@ -116,83 +90,78 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-
-                <!-- CF Client → S3 Static (OAC) -->
                 <mxCell id="e4" value="OAC" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="cf-static" target="s3static" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-
-                <!-- CF API → WAF (Web ACL) -->
                 <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="cf-api" target="waf" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-
-                <!-- WAF → API Gateway -->
                 <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="waf" target="apigateway" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-
-                <!-- API Gateway → ALB (VPC Link) -->
                 <mxCell id="e7" value="VPC Link&#xa;route by path / stage" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="apigateway" target="alb" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-
-                <!-- ALB → API Pods -->
                 <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="alb" target="api1" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="alb" target="api2" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-
-                <!-- API Pods → RDS -->
                 <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="api1" target="rds" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-
-                <!-- API Pods → ElastiCache (JTI + SSE pub/sub) -->
-                <mxCell id="e11" value="JTI store +&#xa;SSE pub/sub" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="api2" target="elasticache" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="e11" value="JTI store +&#xa;SSE pub/sub" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="api2" target="elasticache" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="945" y="560"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
-
-                <!-- API Pod → S3 Media (presigned URL generation, dashed) -->
                 <mxCell id="e12" value="presigned URL&#xa;generation" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;dashed=1;" parent="1" source="api1" target="s3media" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-
-                <!-- S3 Media → SQS (ObjectCreated notification) -->
                 <mxCell id="e13" value="ObjectCreated&#xa;event" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="s3media" target="sqs" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-
-                <!-- SQS → Worker Pods (long poll) -->
-                <mxCell id="e14" value="long poll" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="sqs" target="w1" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="e14" value="long poll" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="w1" target="sqs" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="795" y="583"/>
+                            <mxPoint x="1529" y="583"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="e15" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="sqs" target="w2" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="e15" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="w2" target="sqs" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="919" y="572"/>
+                            <mxPoint x="1529" y="572"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
-
-                <!-- Worker → S3 Media (download + upload) -->
                 <mxCell id="e16" value="download video&#xa;upload artifacts" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="w1" target="s3media" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-
-                <!-- Worker → RDS (update asset status) -->
-                <mxCell id="e17" value="update asset status" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="w1" target="rds" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="e17" value="update asset status" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="w1" target="rds" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1100" y="639"/>
+                            <mxPoint x="1100" y="454"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
-
-                <!-- Worker → ElastiCache (publish SSE event) -->
                 <mxCell id="e18" value="publish SSE event" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="w2" target="elasticache" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-
-                <!-- ElastiCache → API Pod (pub/sub → SSE forward) -->
-                <mxCell id="e19" value="pub/sub → SSE forward" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;endFill=1;" parent="1" source="elasticache" target="api2" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="e19" value="pub/sub → SSE forward" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;endArrow=block;endFill=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="elasticache" target="api2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1050" y="639"/>
+                            <mxPoint x="1050" y="493"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
-
             </root>
         </mxGraphModel>
     </diagram>

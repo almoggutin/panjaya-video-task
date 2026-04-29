@@ -8,7 +8,6 @@
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Client (frontend) tier](#client-frontend-tier)
 - [Server (API) tier](#server-api-tier)
